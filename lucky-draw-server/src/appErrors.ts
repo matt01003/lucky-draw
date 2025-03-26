@@ -1,6 +1,5 @@
 import { StatusCodes } from "http-status-codes"
 
-// src/errors.ts
 export class AppError extends Error {
   constructor(public message: string, public statusCode: number = 500) {
     super(message)

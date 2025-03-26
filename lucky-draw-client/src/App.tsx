@@ -19,7 +19,6 @@ function App() {
     queryKey: ["currentDraw"],
     queryFn: () => Api.getCurrentDraw(),
   })
-  console.log(currentDraw)
 
   const registerMutation = useMutation({
     mutationFn: ({ drawId, userId }: { drawId: number; userId: string }) =>
