@@ -1,6 +1,6 @@
+import { Draw } from "@shared/schema/drawSchema"
+import { RegistrationDto } from "@shared/schema/registrationSchema"
 import { ApiResponse } from "@shared/types/apiResponse"
-import { Draw } from "@shared/types/draw"
-import { Registration } from "@shared/types/registration"
 import axios from "axios"
 
 const API_BASE_URL = "http://localhost:3000/api"
@@ -17,7 +17,10 @@ export const Api = {
   },
 
   registerUser: async (drawId: number, userId: string) => {
-    const { data } = await apiClient.post<ApiResponse<Registration>>("/register", { userId, drawId })
+    const { data } = await apiClient.post<ApiResponse<RegistrationDto>>(
+      "/register",
+      { userId, drawId }
+    )
     return data.data
   },
 }

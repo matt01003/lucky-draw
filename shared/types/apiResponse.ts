@@ -1,4 +1,5 @@
 export interface ApiResponse<T> {
-  data: T
   success: boolean
+  data?: T
+  error?: unknown
 }
